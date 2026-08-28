@@ -38,7 +38,7 @@ def contact(request):
             EmailMessage(
                 subject=subject,
                 body=body,
-                from_email=settings.DEFAULT_FROM_EMAIL,
+                from_email=email,
                 to=[settings.CONTACT_RECIPIENT_EMAIL],
                 reply_to=[email],
             ).send(fail_silently=False)
