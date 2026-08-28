@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block content %}
+
+<section class="hero">
+  <img src="{% static 'assets/slides/hero-machine-bw.gif' %}" alt="{% trans 'Stickmaschine bei der Arbeit' %}" />
+  <a href="{% url 'pages:contact' %}" class="kontakt-bubble">{% trans "Kontakt" %}</a>
+</section>
+
+<section class="headline fade-in">
+  <h1>{% blocktrans %}&bdquo;Wir machen<br>aus Ideen Kleidung.&ldquo;{% endblocktrans %}</h1>
+</section>
+
+<section class="projects" id="projekte">
+  <div class="slider fade-in">
+    <button class="arrow prev" type="button" aria-label="{% trans 'Vorheriges Projekt' %}">&#8249;</button>
+    <div class="cards">
+      {% for page in product_pages %}
+      <div class="card-page{% if forloop.first %} is-active{% endif %}">
+        {% for product in page %}
+        <a class="card" href="{% url 'pages:product_detail' product.slug %}" title="{{ product.name }}">
+          <img src="{{ product.photo.url }}" alt="{{ product.name }}" />
+        </a>
+        {% empty %}
+        <p>{% trans "Noch keine Projekte vorhanden." %}</p>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+    <button class="arrow next" type="button" aria-label="{% trans 'Nächstes Projekt' %}">&#8250;</button>
+  </div>
+</section>
+
+<section class="about fade-in" id="historie">
+  <div class="fabric-bg" style="background-image:url('{% static 'assets/about/fabric-texture.jpg' %}');"></div>
+  <div class="fabric-fade"></div>
+  <div class="inner">
+    <p>{% blocktrans %}Alles beginnt mit einer Idee. Gemeinsam mit unseren Kunden entwickeln wir daraus ein Kleidungsstück, das Identität schafft und eine klare Message vermittelt. Wir kümmern uns um die Gestaltung, die Entwicklung und die Produktion. So begleiten wir den gesamten Weg – von der ersten Idee bis zum fertigen Produkt.{% endblocktrans %}</p>
+    <a href="{% url 'pages:historie' %}" class="btn">{% trans "Mehr Erfahren" %}</a>
+  </div>
+</section>
+
+<section class="logos">
+  <div class="logos-track">
+    <span>ZERO LIMITS</span><span>E3</span><span>Emser Tile</span><span>Starbucks Coffee</span><span>Gatorade</span><span>G&Uuml;DSPORT</span>
+    <span>ZERO LIMITS</span><span>E3</span><span>Emser Tile</span><span>Starbucks Coffee</span><span>Gatorade</span><span>G&Uuml;DSPORT</span>
+  </div>
+</section>
+
+{% endblock %}

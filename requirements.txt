@@ -1,0 +1,6 @@
+Django>=4.2,<5
+psycopg2-binary>=2.9,<3
+Pillow>=10,<11
+python-dotenv>=1,<2
+# Bundled Postgres server for local dev when no DB_HOST is configured (see folle/devdb.py)
+pgserver>=0.1,<0.2

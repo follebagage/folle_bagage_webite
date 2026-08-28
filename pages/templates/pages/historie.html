@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Historie" %} - Folle{% endblock %}
+{% block description %}{% blocktrans %}Die Geschichte von Folle Bagage - von der ersten Idee bis zum fertigen Kleidungsstück.{% endblocktrans %}{% endblock %}
+
+{% block extra_css %}
+  .historie-page{
+    position:relative;
+    padding:90px 5%;
+    text-align:center;
+    overflow:hidden;
+  }
+  .historie-page .fabric-bg{
+    position:absolute;inset:0;
+    background-size:cover;background-position:center;
+    filter:grayscale(100%);
+    z-index:0;
+  }
+  .historie-page .fabric-fade{
+    position:absolute;inset:0;
+    background:linear-gradient(to bottom, var(--white) 0%, var(--white) 18%, rgba(255,255,255,0.55) 45%, rgba(255,255,255,0.15) 70%, rgba(255,255,255,0) 100%);
+    z-index:1;
+  }
+  .historie-page .inner{
+    position:relative;z-index:2;
+    max-width:820px;margin:0 auto;
+  }
+  .historie-page h1{
+    font-weight:800;font-style:italic;
+    text-transform:uppercase;
+    font-size:clamp(28px,4.4vw,52px);
+    transform:skewX(-6deg);
+    margin:0 0 34px;
+  }
+  .historie-page p{
+    font-size:clamp(16px,2vw,22px);
+    line-height:1.7;
+    font-weight:500;
+    margin:0 0 24px;
+    text-align:left;
+  }
+{% endblock %}
+
+{% block content %}
+<section class="historie-page fade-in">
+  <div class="fabric-bg" style="background-image:url('{% static 'assets/about/fabric-texture.jpg' %}');"></div>
+  <div class="fabric-fade"></div>
+  <div class="inner">
+    <h1>{% trans "Historie" %}</h1>
+    <p>{% blocktrans %}Alles beginnt mit einer Idee. Gemeinsam mit unseren Kunden entwickeln wir daraus ein Kleidungsstück, das Identität schafft und eine klare Message vermittelt.{% endblocktrans %}</p>
+    <p>{% blocktrans %}Wir kümmern uns um die Gestaltung, die Entwicklung und die Produktion. So begleiten wir den gesamten Weg – von der ersten Idee bis zum fertigen Produkt.{% endblocktrans %}</p>
+  </div>
+</section>
+{% endblock %}

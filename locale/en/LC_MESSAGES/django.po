@@ -1,0 +1,125 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: folle 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgid "Folle - Wir machen aus Ideen Kleidung."
+msgstr "Folle - We turn ideas into clothing."
+
+msgid "Folle ist eine Textilmanufaktur. Wir begleiten den gesamten Weg von der ersten Idee bis zum fertigen Kleidungsstück."
+msgstr "Folle is a textile manufacturer. We accompany the entire journey from the first idea to the finished garment."
+
+msgid "Historie"
+msgstr "History"
+
+msgid "Projekte"
+msgstr "Projects"
+
+msgid "Kontakt"
+msgstr "Contact"
+
+msgid "Referenzen"
+msgstr "References"
+
+msgid "Folle Maskottchen"
+msgstr "Folle mascot"
+
+msgid "Datenschutz"
+msgstr "Privacy Policy"
+
+msgid "Impressum"
+msgstr "Legal Notice"
+
+msgid "Stickmaschine bei der Arbeit"
+msgstr "Embroidery machine at work"
+
+msgid "&bdquo;Wir machen<br>aus Ideen Kleidung.&ldquo;"
+msgstr "&ldquo;We turn<br>ideas into clothing.&rdquo;"
+
+msgid "Vorheriges Projekt"
+msgstr "Previous project"
+
+msgid "Folle T-Shirt Lehndorf"
+msgstr "Folle T-shirt Lehndorf"
+
+msgid "Folle Polo CoTec"
+msgstr "Folle polo CoTec"
+
+msgid "Deutscher Meister 1967"
+msgstr "German Champion 1967"
+
+msgid "Folle T-Shirt Deutscher Meister 1967"
+msgstr "Folle T-shirt German Champion 1967"
+
+msgid "Nächstes Projekt"
+msgstr "Next project"
+
+msgid "Alles beginnt mit einer Idee. Gemeinsam mit unseren Kunden entwickeln wir daraus ein Kleidungsstück, das Identität schafft und eine klare Message vermittelt. Wir kümmern uns um die Gestaltung, die Entwicklung und die Produktion. So begleiten wir den gesamten Weg – von der ersten Idee bis zum fertigen Produkt."
+msgstr "It all starts with an idea. Together with our customers, we turn that idea into a garment that creates identity and delivers a clear message. We take care of the design, the development and the production. That's how we accompany the entire journey - from the first idea to the finished product."
+
+msgid "Mehr Erfahren"
+msgstr "Learn More"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "E-Mail"
+msgstr "Email"
+
+msgid "Nachricht"
+msgstr "Message"
+
+msgid "Absenden"
+msgstr "Send"
+
+msgid "Danke für deine Nachricht! Wir melden uns bei dir."
+msgstr "Thank you for your message! We'll get back to you."
+
+msgid "Instagram:"
+msgstr "Instagram:"
+
+msgid "Inhalte folgen in Kürze."
+msgstr "Content coming soon."
+
+msgid "Noch keine Projekte vorhanden."
+msgstr "No projects yet."
+
+msgid "Zurück zu den Projekten"
+msgstr "Back to projects"
+
+msgid "So entsteht es"
+msgstr "How it's made"
+
+msgid "Powered by"
+msgstr "Powered by"
+
+msgid "Kontaktiere Folle Bagage. Hier findest du unsere Adresse, Kontaktdaten und ein Kontaktformular."
+msgstr "Contact Folle Bagage. Find our address, contact details and a contact form here."
+
+msgid "Telefon:"
+msgstr "Phone:"
+
+msgid "E-Mail:"
+msgstr "Email:"
+
+msgid "Standort"
+msgstr "Location"
+
+msgid "Die Geschichte von Folle Bagage - von der ersten Idee bis zum fertigen Kleidungsstück."
+msgstr "The history of Folle Bagage - from the first idea to the finished garment."
+
+msgid "Bitte fülle alle Felder aus."
+msgstr "Please fill in all fields."
+
+msgid "Neue Kontaktanfrage von %(name)s"
+msgstr "New contact request from %(name)s"
+
+msgid "Ungültige Eingabe."
+msgstr "Invalid input."
+
+msgid "Nachricht konnte nicht gesendet werden. Bitte versuche es später erneut."
+msgstr "Message could not be sent. Please try again later."
