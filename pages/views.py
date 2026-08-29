@@ -1,3 +1,5 @@
+import logging
+
 from django.conf import settings
 from django.core.mail import EmailMessage, BadHeaderError
 from django.db import connection
@@ -6,6 +8,8 @@ from django.shortcuts import get_object_or_404, render
 from django.utils.translation import gettext as _
 
 from .models import Product
+
+logger = logging.getLogger(__name__)
 
 
 def home(request):
@@ -46,6 +50,7 @@ def contact(request):
         except BadHeaderError:
             return JsonResponse({'ok': False, 'error': _('Ungültige Eingabe.')}, status=400)
         except Exception:
+            logger.exception('Contact form email failed to send')
             return JsonResponse({'ok': False, 'error': _('Nachricht konnte nicht gesendet werden. Bitte versuche es später erneut.')}, status=500)
 
         return JsonResponse({'ok': True})
