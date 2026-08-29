@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -89,25 +90,21 @@ WSGI_APPLICATION = 'folle.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DB_HOST = os.environ.get('DB_HOST')
-DB_NAME = os.environ.get('DB_NAME', 'folle')
+from urllib.parse import urlparse
 
-if DB_HOST:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': DB_NAME,
-            'USER': os.environ.get('DB_USER', 'postgres'),
-            'PASSWORD': os.environ.get('DB_PASSWORD', ''),
-            'HOST': DB_HOST,
-            'PORT': os.environ.get('DB_PORT', '5432'),
-        }
+_db_url = urlparse(os.environ['DATABASE_URL'])
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': _db_url.path.lstrip('/'),
+        'USER': _db_url.username,
+        'PASSWORD': _db_url.password,
+        'HOST': _db_url.hostname,
+        'PORT': _db_url.port or 5432,
+        'OPTIONS': {'sslmode': 'require'},
     }
-else:
-    # No DB_HOST configured: assume local development and use a self-managed
-    # embedded PostgreSQL server (no system install / root access needed).
-    from folle.devdb import local_postgres_params
-    DATABASES = {'default': local_postgres_params(DB_NAME)}
+}
 
 
 # Password validation
@@ -155,6 +152,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STORAGES = {
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

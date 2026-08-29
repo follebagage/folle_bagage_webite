@@ -4,8 +4,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 
+from pages.views import health
+
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
+    path('health/', health, name='health'),
 ]
 
 urlpatterns += i18n_patterns(

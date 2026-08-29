@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.core.mail import EmailMessage, BadHeaderError
+from django.db import connection
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.utils.translation import gettext as _
@@ -54,3 +55,21 @@ def contact(request):
 
 def historie(request):
     return render(request, 'pages/historie.html')
+
+
+def health(request):
+    db = settings.DATABASES['default']
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute('SELECT 1')
+        connected = True
+    except Exception:
+        connected = False
+
+    return JsonResponse({
+        'connected': connected,
+        'engine': db['ENGINE'].rsplit('.', 1)[-1],
+        'database': db['NAME'],
+        'host': db.get('HOST'),
+        'user': db.get('USER'),
+    })
