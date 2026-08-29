@@ -177,6 +177,7 @@ if EMAIL_HOST_USER and EMAIL_HOST_PASSWORD:
     EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
     EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
     EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
+    EMAIL_TIMEOUT = int(os.environ.get('EMAIL_TIMEOUT', 10))
 else:
     # No SMTP credentials configured: print emails to the console instead of
     # failing, so the contact form still works during local development.
