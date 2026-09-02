@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <script>
   if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
-  if(!location.hash){ window.scrollTo(0, 0); }
+  window.__pendingHash = location.hash;
+  if(location.hash){
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+  window.scrollTo(0, 0);
 </script>
 <title>{% block title %}{% trans "Folle - Wir machen aus Ideen Kleidung." %}{% endblock %}</title>
 <meta name="description" content="{% block description %}{% trans "Folle ist eine Textilmanufaktur. Wir begleiten den gesamten Weg von der ersten Idee bis zum fertigen Kleidungsstück." %}{% endblock %}" />
@@ -680,6 +684,19 @@
 
 <script>
 (function(){
+  // Page always starts at the very top; if a link pointed at a section
+  // (e.g. the "Projekte" nav item), glide there smoothly once the page
+  // has settled instead of jumping straight there before the user sees the top.
+  if(window.__pendingHash){
+    var pendingTarget = document.querySelector(window.__pendingHash);
+    if(pendingTarget){
+      window.setTimeout(function(){
+        pendingTarget.scrollIntoView({behavior:'smooth', block:'start'});
+        history.replaceState(null, '', window.__pendingHash);
+      }, 1050);
+    }
+  }
+
   var form = document.getElementById('contact-form');
   var thanks = document.getElementById('form-thanks');
   var formError = document.getElementById('form-error');
@@ -798,9 +815,14 @@
     });
   }
 
+  // Only run scroll-linked effects on devices with a precise pointer (desktop).
+  // On touch devices, restyling a large animated image on every scroll frame
+  // is expensive and was making the page feel janky/broken while scrolling.
+  var isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
   // Hero parallax: subtle scale + fade tied to scroll position
   var heroMedia = document.querySelector('.hero .hero-media');
-  if(heroMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  if(heroMedia && isFinePointer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     var hero = document.querySelector('.hero');
     var tickingHero = false;
     var updateHero = function(){
@@ -836,7 +858,7 @@
     if(prevBtn){ prevBtn.addEventListener('click', function(){ scrollByCard(-1); }); }
     if(nextBtn){ nextBtn.addEventListener('click', function(){ scrollByCard(1); }); }
 
-    if(slides.length > 1){
+    if(slides.length > 1 && isFinePointer){
       var autoplay = setInterval(function(){
         var atEnd = Math.ceil(track.scrollLeft + track.clientWidth) >= track.scrollWidth;
         if(atEnd){ track.scrollTo({left:0, behavior:'smooth'}); }
@@ -862,7 +884,7 @@
 
   // Vertical parallax for background media (About / Historie fabric texture)
   var parallaxEls = document.querySelectorAll('.parallax-bg');
-  if(parallaxEls.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  if(parallaxEls.length && isFinePointer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     var tickingParallax = false;
     var updateParallax = function(){
       parallaxEls.forEach(function(el){
