@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+  if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+  if(!location.hash){ window.scrollTo(0, 0); }
+</script>
 <title>{% block title %}{% trans "Folle - Wir machen aus Ideen Kleidung." %}{% endblock %}</title>
 <meta name="description" content="{% block description %}{% trans "Folle ist eine Textilmanufaktur. Wir begleiten den gesamten Weg von der ersten Idee bis zum fertigen Kleidungsstück." %}{% endblock %}" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -166,6 +170,7 @@
   .menu-toggle.is-open span::after{top:0;transform:rotate(-45deg);background:var(--white);}
 
   @media (max-width:860px){
+    header.site-header{gap:0;}
     .menu-toggle{display:block;}
     .header-right{
       order:3;
@@ -292,6 +297,8 @@
   }
   .projects .projects-head{
     display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px 16px;
     max-width:1400px;margin:0 auto clamp(16px,2.4vw,26px);
     padding:0 5%;
     color:var(--white);
@@ -412,7 +419,7 @@
   }
   .about .fabric-fade{
     position:absolute;inset:0;
-    background:linear-gradient(to bottom, var(--white) 0%, var(--white) 18%, rgba(255,255,255,0.55) 45%, rgba(255,255,255,0.15) 70%, rgba(255,255,255,0) 100%);
+    background:linear-gradient(to bottom, var(--white) 0%, var(--white) 18%, rgba(255,255,255,0.75) 45%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.5) 100%);
     z-index:1;
   }
   .about .inner{
