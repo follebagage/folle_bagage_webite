@@ -7,8 +7,16 @@
 <meta name="description" content="{% block description %}{% trans "Folle ist eine Textilmanufaktur. Wir begleiten den gesamten Weg von der ersten Idee bis zum fertigen Kleidungsstück." %}{% endblock %}" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Anton&family=Rye&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Anton&display=swap" rel="stylesheet">
 <style>
+  @font-face{
+    font-family:'Tenaciou';
+    src:url('{% static "fonts/Tenaciou-Heavy.woff2" %}') format('woff2'),
+        url('{% static "fonts/Tenaciou-Heavy.otf" %}') format('opentype');
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+  }
   :root{
     --blue:#4B7792;
     --blue-dark:#3c6178;
@@ -16,7 +24,7 @@
     --white:#ffffff;
     --font-body:'Sora',system-ui,sans-serif;
     --font-display:'Anton',system-ui,sans-serif;
-    --font-logo:'Rye',system-ui,cursive;
+    --font-logo:'Tenaciou',system-ui,cursive;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -533,7 +541,7 @@
   }
   .footer-grid a:hover{opacity:0.8;}
   .footer-center .mascot{
-    width:min(150px,60%);margin:0 auto;display:block;overflow:visible;
+    width:150px;max-width:100%;height:auto;margin:0 auto;display:block;overflow:visible;
     animation:mascotSway 4.5s ease-in-out infinite;
     transition:transform .3s cubic-bezier(.2,.7,.2,1);
   }
