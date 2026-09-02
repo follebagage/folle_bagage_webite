@@ -1,19 +1,25 @@
 {% load static i18n %}
 <header class="site-header" id="top">
   <a href="{% url 'pages:home' %}#top" class="logo">FOLLE</a>
-  <nav class="main-nav">
-    <a href="{% url 'pages:historie' %}">{% trans "Historie" %}</a>
-    <a href="{% url 'pages:home' %}#projekte">{% trans "Projekte" %}</a>
-    <a href="{% url 'pages:contact' %}">{% trans "Kontakt" %}</a>
-    <a href="https://www.instagram.com/folle.bagage/" target="_blank" rel="noopener">Instagram</a>
-  </nav>
-  <form action="{% url 'set_language' %}" method="post" class="lang-switch">
-    {% csrf_token %}
-    <input name="next" type="hidden" value="{{ request.path }}" />
-    {% get_current_language as CURRENT_LANGUAGE %}
-    {% get_available_languages as AVAILABLE_LANGUAGES %}
-    {% for code, name in AVAILABLE_LANGUAGES %}
-      <button type="submit" name="language" value="{{ code }}" class="lang-btn{% if code == CURRENT_LANGUAGE %} is-active{% endif %}">{{ code|upper }}</button>
-    {% endfor %}
-  </form>
+  <button type="button" class="menu-toggle" id="menu-toggle" aria-controls="header-right" aria-expanded="false">
+    <span class="screen-reader-text">{% trans "Menü umschalten" %}</span>
+    <span></span>
+  </button>
+  <div class="header-right" id="header-right">
+    <nav class="main-nav">
+      <a href="{% url 'pages:historie' %}">{% trans "Historie" %}</a>
+      <a href="{% url 'pages:home' %}#projekte">{% trans "Projekte" %}</a>
+      <a href="{% url 'pages:contact' %}">{% trans "Kontakt" %}</a>
+      <a href="https://www.instagram.com/folle.bagage/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <form action="{% url 'set_language' %}" method="post" class="lang-switch">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.path }}" />
+      {% get_current_language as CURRENT_LANGUAGE %}
+      {% get_available_languages as AVAILABLE_LANGUAGES %}
+      {% for code, name in AVAILABLE_LANGUAGES %}
+        <button type="submit" name="language" value="{{ code }}" class="lang-btn{% if code == CURRENT_LANGUAGE %} is-active{% endif %}">{{ code|upper }}</button>
+      {% endfor %}
+    </form>
+  </div>
 </header>

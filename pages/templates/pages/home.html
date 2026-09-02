@@ -4,28 +4,32 @@
 {% block content %}
 
 <section class="hero">
-  <img src="{% static 'assets/slides/hero-machine-bw.gif' %}" alt="{% trans 'Stickmaschine bei der Arbeit' %}" />
+  <div class="hero-media">
+    <img src="{% static 'assets/slides/hero-machine-bw.gif' %}" alt="{% trans 'Stickmaschine bei der Arbeit' %}" />
+  </div>
+  <div class="hero-overlay"></div>
   <a href="{% url 'pages:contact' %}" class="kontakt-bubble">{% trans "Kontakt" %}</a>
 </section>
 
-<section class="headline fade-in">
-  <h1>{% blocktrans %}&bdquo;Wir machen<br>aus Ideen Kleidung.&ldquo;{% endblocktrans %}</h1>
+<section class="headline">
+  <h1 class="split-reveal" data-split="word">{% blocktrans %}&bdquo;Wir machen<br>aus Ideen Kleidung.&ldquo;{% endblocktrans %}</h1>
 </section>
 
 <section class="projects" id="projekte">
+  <div class="projects-head">
+    <h2 class="split-reveal" data-split="char">{% trans "Projekte" %}</h2>
+    <span class="swipe-hint text-reveal-right">{% trans "Zum Durchblättern wischen" %} &rarr;</span>
+  </div>
   <div class="slider fade-in">
     <button class="arrow prev" type="button" aria-label="{% trans 'Vorheriges Projekt' %}">&#8249;</button>
     <div class="cards">
-      {% for page in product_pages %}
-      <div class="card-page{% if forloop.first %} is-active{% endif %}">
-        {% for product in page %}
-        <a class="card" href="{% url 'pages:product_detail' product.slug %}" title="{{ product.name }}">
-          <img src="{{ product.photo.url }}" alt="{{ product.name }}" />
-        </a>
-        {% empty %}
-        <p>{% trans "Noch keine Projekte vorhanden." %}</p>
-        {% endfor %}
-      </div>
+      {% for product in products %}
+      <a class="card" href="{% url 'pages:product_detail' product.slug %}" title="{{ product.name }}">
+        <img src="{{ product.photo.url }}" alt="{{ product.name }}" loading="lazy" />
+        <span class="card-label">{{ product.name }}</span>
+      </a>
+      {% empty %}
+      <p class="empty">{% trans "Noch keine Projekte vorhanden." %}</p>
       {% endfor %}
     </div>
     <button class="arrow next" type="button" aria-label="{% trans 'Nächstes Projekt' %}">&#8250;</button>
@@ -33,7 +37,7 @@
 </section>
 
 <section class="about fade-in" id="historie">
-  <div class="fabric-bg" style="background-image:url('{% static 'assets/about/fabric-texture.jpg' %}');"></div>
+  <div class="fabric-bg parallax-bg" style="background-image:url('{% static 'assets/about/fabric-texture.jpg' %}');"></div>
   <div class="fabric-fade"></div>
   <div class="inner">
     <p>{% blocktrans %}Alles beginnt mit einer Idee. Gemeinsam mit unseren Kunden entwickeln wir daraus ein Kleidungsstück, das Identität schafft und eine klare Message vermittelt. Wir kümmern uns um die Gestaltung, die Entwicklung und die Produktion. So begleiten wir den gesamten Weg – von der ersten Idee bis zum fertigen Produkt.{% endblocktrans %}</p>

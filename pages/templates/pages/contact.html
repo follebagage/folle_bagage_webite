@@ -83,10 +83,10 @@
 {% block content %}
 <section class="contact-page fade-in">
   <div class="inner">
-    <h1>{% trans "Kontakt" %}</h1>
+    <h1 class="split-reveal" data-split="char">{% trans "Kontakt" %}</h1>
     <div class="grid">
-      <div class="company">
-        <h2>Folle Bagage</h2>
+      <div class="company text-reveal-left">
+        <h2 class="split-reveal" data-split="word">Folle Bagage</h2>
         <address>
           Musterstra&szlig;e 12<br>
           10115 Berlin<br>
@@ -97,7 +97,7 @@
         </address>
         <iframe class="map-frame" title="{% trans 'Standort' %}" loading="lazy" src="https://www.google.com/maps?q=Musterstra%C3%9Fe+12,+10115+Berlin,+Deutschland&output=embed"></iframe>
       </div>
-      <div class="contact-form">
+      <div class="contact-form text-reveal-right">
         <form id="contact-form" method="post" action="{% url 'pages:contact' %}">
           {% csrf_token %}
           <div>

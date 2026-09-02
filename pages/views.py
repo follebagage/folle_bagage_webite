@@ -14,9 +14,7 @@ logger = logging.getLogger(__name__)
 
 def home(request):
     products = list(Product.objects.all())
-    chunk_size = 3
-    product_pages = [products[i:i + chunk_size] for i in range(0, len(products), chunk_size)] or [[]]
-    return render(request, 'pages/home.html', {'product_pages': product_pages})
+    return render(request, 'pages/home.html', {'products': products})
 
 
 def product_detail(request, slug):

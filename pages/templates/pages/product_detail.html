@@ -18,9 +18,12 @@
     font-weight:800;font-style:italic;
     text-transform:uppercase;
     font-size:clamp(26px,4vw,46px);
-    transform:skewX(-6deg);
     margin:0 0 40px;
   }
+  /* Combined with .text-reveal's own transform so the slide-up reveal animates
+     alongside the permanent skew instead of one overriding the other. */
+  .product-detail h1.text-reveal{transform:skewX(-6deg) translateY(22px);}
+  .product-detail h1.text-reveal.is-visible{transform:skewX(-6deg) translateY(0);}
   .product-detail .product-main{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -71,17 +74,17 @@
 
 {% block content %}
 <section class="product-detail fade-in">
-  <a href="{% url 'pages:home' %}#projekte" class="back-link">&larr; {% trans "Zurück zu den Projekten" %}</a>
-  <h1>{{ product.name }}</h1>
+  <a href="{% url 'pages:home' %}#projekte" class="back-link text-reveal-left">&larr; {% trans "Zurück zu den Projekten" %}</a>
+  <h1 class="text-reveal">{{ product.name }}</h1>
   <div class="product-main">
-    <div class="photo-frame">
+    <div class="photo-frame fade-in">
       <img class="photo" src="{{ product.photo.url }}" alt="{{ product.name }}" />
     </div>
-    <p class="description">{{ product.description|linebreaksbr }}</p>
+    <p class="description text-reveal">{{ product.description|linebreaksbr }}</p>
   </div>
   {% if product.making_video %}
-  <div class="video-wrap">
-    <h2>{% trans "So entsteht es" %}</h2>
+  <div class="video-wrap fade-in">
+    <h2 class="split-reveal" data-split="word">{% trans "So entsteht es" %}</h2>
     <div class="video-frame">
       <video controls preload="metadata">
         <source src="{{ product.making_video.url }}">
