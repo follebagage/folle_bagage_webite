@@ -194,36 +194,33 @@
   .hero{
     position:relative;
     width:100%;
-    min-height:min(90vh,760px);
+    min-height:min(72vh,640px);
     overflow:hidden;
-    background:#111;
+    background:var(--white);
   }
   .hero .hero-media{
     position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    padding:40px 5%;
     will-change:transform,opacity;
   }
   .hero .hero-media img{
-    width:100%;height:100%;object-fit:cover;
-    filter:grayscale(100%);
-  }
-  .hero .hero-overlay{
-    position:absolute;inset:0;
-    background:linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 40%, rgba(75,119,146,0.55) 100%);
+    width:auto;height:100%;max-width:100%;object-fit:contain;
   }
   @media (max-width:720px){
-    .hero{min-height:min(78vh,620px);}
+    .hero{min-height:min(62vh,520px);}
   }
   .kontakt-bubble{
     position:absolute;
     z-index:2;
     right:5%;
     bottom:8%;
-    background:var(--white);
-    color:var(--blue);
+    background:var(--blue);
+    color:var(--white);
     font-weight:700;
     font-size:clamp(16px,2vw,26px);
     padding:10px 26px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+    box-shadow:0 6px 18px rgba(0,0,0,0.18);
     opacity:0;
     animation:bubbleIn .7s cubic-bezier(.2,.7,.2,1) .5s both;
   }
@@ -233,7 +230,7 @@
     left:-14px;bottom:0;
     border-width:0 14px 14px 0;
     border-style:solid;
-    border-color:transparent var(--white) transparent transparent;
+    border-color:transparent var(--blue) transparent transparent;
   }
   @keyframes bubbleIn{
     from{opacity:0;transform:translateY(16px) scale(0.9);}
@@ -535,18 +532,18 @@
     border-top:1px solid rgba(255,255,255,0.2);
   }
   .footer-grid a:hover{opacity:0.8;}
-  .footer-center .mascot{width:min(150px,60%);margin:0 auto;display:block;overflow:visible;}
-  .footer-center .mascot .mascot-trunk{
-    transform-box:fill-box;
-    transform-origin:100% 15%;
+  .footer-center .mascot{
+    width:min(150px,60%);margin:0 auto;display:block;overflow:visible;
     animation:mascotSway 4.5s ease-in-out infinite;
+    transition:transform .3s cubic-bezier(.2,.7,.2,1);
   }
+  .footer-center .mascot:hover{transform:scale(1.06) rotate(-2deg);}
   @keyframes mascotSway{
     0%,100%{transform:rotate(0deg);}
-    50%{transform:rotate(3deg);}
+    50%{transform:rotate(1.5deg);}
   }
   @media (prefers-reduced-motion: reduce){
-    .footer-center .mascot .mascot-trunk{animation:none;}
+    .footer-center .mascot{animation:none;}
   }
   .footer-center .foot-logo{
     font-family:var(--font-logo);
@@ -587,6 +584,34 @@
     .text-reveal,.text-reveal-left,.text-reveal-right{opacity:1;transform:none;transition:none;}
   }
 
+  /* ---------- Text Fade In: plain opacity, no movement ---------- */
+  .text-fade{
+    opacity:0;
+    transition:opacity .7s cubic-bezier(.22,1,.36,1);
+  }
+  .text-fade.is-visible{opacity:1;}
+
+  /* ---------- Slide Down: matches pro11.org's Elementor "fadeInDown" entrance
+     (translate3d(0,-100%,0) -> none, 1.25s ease) used across their headings/paragraphs ---------- */
+  .text-slide-down{
+    opacity:0;
+    transform:translateY(-100%);
+    transition:opacity 1.25s ease, transform 1.25s ease;
+  }
+  .text-slide-down.is-visible{opacity:1;transform:translateY(0);}
+
+  /* ---------- Scale + Fade In: starts smaller, grows while fading in ---------- */
+  .text-scale-fade{
+    opacity:0;
+    transform:scale(0.85);
+    transition:opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1);
+  }
+  .text-scale-fade.is-visible{opacity:1;transform:scale(1);}
+
+  @media (prefers-reduced-motion: reduce){
+    .text-fade,.text-slide-down,.text-scale-fade{opacity:1;transform:none;transition:none;}
+  }
+
   /* ---------- Staggered slide-up text reveal (section headings): split by word or letter ---------- */
   .split-reveal .split-mask{
     display:inline-block;
@@ -608,11 +633,15 @@
   @media (prefers-reduced-motion: reduce){
     .split-reveal .split-piece{transition:none;transform:none;opacity:1;}
   }
-  /* Anton has no real italic face; per-letter synthetic oblique renders jaggedly when
-     each character sits in its own box, so char-split headings use a real skew instead. */
-  .split-reveal[data-split="char"]{
+  /* Anton has no real italic face, so font-style:italic triggers synthetic oblique.
+     Combined with each word/letter sitting in its own overflow:hidden mask, that
+     synthetic slant bleeds past the mask's right edge and gets clipped (worst on
+     char-split, but word-split trailing characters clip too) - so every split-reveal
+     heading disables the faux italic and uses a real skew on the whole element instead,
+     matching the same angle as this site's other (non-split) skewed headings. */
+  .split-reveal{
     font-style:normal!important;
-    transform:skewX(-8deg)!important;
+    transform:skewX(-6deg)!important;
   }
 
   /* ---------- Scroll parallax backgrounds ---------- */
@@ -710,7 +739,7 @@
     });
   });
 
-  var els = document.querySelectorAll('.fade-in, .text-reveal, .text-reveal-left, .text-reveal-right, .split-reveal');
+  var els = document.querySelectorAll('.fade-in, .text-reveal, .text-reveal-left, .text-reveal-right, .split-reveal, .text-fade, .text-slide-down, .text-scale-fade');
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){

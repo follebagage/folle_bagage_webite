@@ -7,29 +7,13 @@
       <a href="{% url 'pages:historie' %}">{% trans "Historie" %}</a>
     </div>
     <div class="footer-center">
-      <svg class="mascot" viewBox="0 0 220 300" role="img" aria-label="{% trans 'Folle Maskottchen' %}" xmlns="http://www.w3.org/2000/svg">
-        <g transform="rotate(16 135 205)">
-          <rect x="118" y="205" width="34" height="72" rx="16" fill="#ffffff"/>
-          <ellipse cx="135" cy="278" rx="19" ry="9" fill="#cfe0e9"/>
-        </g>
-        <g>
-          <rect x="70" y="205" width="34" height="66" rx="16" fill="#ffffff"/>
-          <ellipse cx="87" cy="272" rx="19" ry="9" fill="#cfe0e9"/>
-        </g>
-        <rect x="55" y="140" width="110" height="92" rx="40" fill="#ffffff"/>
-        <rect x="58" y="168" width="104" height="54" rx="20" fill="var(--blue-dark)"/>
-        <ellipse cx="93" cy="103" rx="50" ry="60" fill="#f2f7fa" transform="rotate(-12 93 103)"/>
-        <path class="mascot-trunk" d="M130,150 C121,190 92,206 76,195 C57,182 61,149 86,139 C110,130 126,82 104,54 C92,39 68,36 56,49 C49,57 53,68 63,68" fill="none" stroke="#ffffff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="140" cy="100" r="52" fill="#ffffff"/>
-        <path d="M168,118 C180,120 186,132 176,142 C170,148 163,142 163,133 Z" fill="#f2f7fa" stroke="var(--blue-dark)" stroke-width="2"/>
-        <circle cx="158" cy="88" r="5.5" fill="var(--blue-dark)"/>
-      </svg>
-      <div class="foot-logo text-reveal">FOLLE</div>
+      <img class="mascot" src="{% static 'assets/footer/elephant-mascot.png' %}" alt="{% trans 'Folle Maskottchen' %}" width="220" height="311" loading="lazy" />
+      <div class="foot-logo text-scale-fade">FOLLE</div>
     </div>
     <div class="footer-right text-reveal-right">
       <a href="{% url 'pages:home' %}#top">Folle Bagage</a>
       <a href="{% url 'pages:contact' %}">{% trans "Kontakt" %}</a>
     </div>
   </div>
-  <div class="powered-by text-reveal">{% trans "Powered by" %}  Phynix Technologies Private Limited</div>
+  <div class="powered-by text-fade">{% trans "Powered by" %}  Phynix Technologies Private Limited</div>
 </footer>

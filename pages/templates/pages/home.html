@@ -5,9 +5,8 @@
 
 <section class="hero">
   <div class="hero-media">
-    <img src="{% static 'assets/slides/hero-machine-bw.gif' %}" alt="{% trans 'Stickmaschine bei der Arbeit' %}" />
+    <img src="{% static 'assets/footer/elephant-mascot.png' %}" alt="{% trans 'Folle Maskottchen' %}" />
   </div>
-  <div class="hero-overlay"></div>
   <a href="{% url 'pages:contact' %}" class="kontakt-bubble">{% trans "Kontakt" %}</a>
 </section>
 
@@ -39,9 +38,9 @@
 <section class="about fade-in" id="historie">
   <div class="fabric-bg parallax-bg" style="background-image:url('{% static 'assets/about/fabric-texture.jpg' %}');"></div>
   <div class="fabric-fade"></div>
-  <div class="inner">
-    <p>{% blocktrans %}Alles beginnt mit einer Idee. Gemeinsam mit unseren Kunden entwickeln wir daraus ein Kleidungsstück, das Identität schafft und eine klare Message vermittelt. Wir kümmern uns um die Gestaltung, die Entwicklung und die Produktion. So begleiten wir den gesamten Weg – von der ersten Idee bis zum fertigen Produkt.{% endblocktrans %}</p>
-    <a href="{% url 'pages:historie' %}" class="btn">{% trans "Mehr Erfahren" %}</a>
+  <div class="inner text-stagger">
+    <p class="text-slide-down">{% blocktrans %}Alles beginnt mit einer Idee. Gemeinsam mit unseren Kunden entwickeln wir daraus ein Kleidungsstück, das Identität schafft und eine klare Message vermittelt. Wir kümmern uns um die Gestaltung, die Entwicklung und die Produktion. So begleiten wir den gesamten Weg – von der ersten Idee bis zum fertigen Produkt.{% endblocktrans %}</p>
+    <a href="{% url 'pages:historie' %}" class="btn text-slide-down">{% trans "Mehr Erfahren" %}</a>
   </div>
 </section>
 
