@@ -60,6 +60,14 @@ def historie(request):
     return render(request, 'pages/historie.html')
 
 
+def privacy(request):
+    return render(request, 'pages/privacy.html')
+
+
+def impressum(request):
+    return render(request, 'pages/impressum.html')
+
+
 def health(request):
     db = settings.DATABASES['default']
     try:

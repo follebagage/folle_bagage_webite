@@ -11,11 +11,11 @@
   }
   window.scrollTo(0, 0);
 </script>
-<title>{% block title %}{% trans "Folle - Wir machen aus Ideen Kleidung." %}{% endblock %}</title>
+<title>{% block title %}{% trans "Folle - Wir machen aus Ideen Kleidung" %}{% endblock %}</title>
 <meta name="description" content="{% block description %}{% trans "Folle ist eine Textilmanufaktur. Wir begleiten den gesamten Weg von der ersten Idee bis zum fertigen Kleidungsstück." %}{% endblock %}" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 <style>
   @font-face{
     font-family:'Tenaciou';
@@ -30,8 +30,8 @@
     --blue-dark:#3c6178;
     --card-bg:#ECECEC;
     --white:#ffffff;
-    --font-body:'Sora',system-ui,sans-serif;
-    --font-display:'Anton',system-ui,sans-serif;
+    --font-body:'Poppins',system-ui,sans-serif;
+    --font-display:'Poppins',system-ui,sans-serif;
     --font-logo:'Tenaciou',system-ui,cursive;
   }
   *{box-sizing:border-box;}
@@ -97,7 +97,7 @@
   .logo{
     font-family:var(--font-logo);
     font-weight:400;
-    font-size:clamp(24px,3vw,32px);
+    font-size:clamp(27px,3.4vw,36px);
     color:var(--white);
     letter-spacing:0.03em;
     display:inline-block;
@@ -235,20 +235,15 @@
     bottom:8%;
     background:var(--white);
     color:var(--blue);
-    font-weight:700;
-    font-size:clamp(16px,2vw,26px);
-    padding:10px 26px;
+    border-radius:0;
+    font-weight:600;
+    font-size:clamp(15px,1.4vw,17px);
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    padding:14px 30px;
     box-shadow:0 6px 18px rgba(0,0,0,0.25);
     opacity:0;
     animation:bubbleIn .7s cubic-bezier(.2,.7,.2,1) .5s both;
-  }
-  .kontakt-bubble::after{
-    content:"";
-    position:absolute;
-    left:-14px;bottom:0;
-    border-width:0 14px 14px 0;
-    border-style:solid;
-    border-color:transparent var(--white) transparent transparent;
   }
   @keyframes bubbleIn{
     from{opacity:0;transform:translateY(16px) scale(0.9);}
@@ -256,6 +251,10 @@
   }
   @media (prefers-reduced-motion: reduce){
     .kontakt-bubble{animation:none;opacity:1;}
+  }
+  /* Contact CTA is a desktop-only affordance; on tablet/mobile it's reachable via the menu instead. */
+  @media (max-width:1024px){
+    .kontakt-bubble{display:none;}
   }
 
   /* ---------- Headline ---------- */
@@ -279,7 +278,7 @@
   }
   .headline h1{
     margin:0;
-    font-weight:400;
+    font-weight:700;
     font-style:italic;
     text-transform:uppercase;
     font-size:clamp(28px,5.4vw,66px);
@@ -311,15 +310,10 @@
   .projects .projects-head h2{
     margin:0;
     font-family:var(--font-display);
-    font-weight:400;
+    font-weight:700;
     font-style:italic;
     text-transform:uppercase;
     font-size:clamp(20px,2.6vw,32px);
-  }
-  .projects .projects-head .swipe-hint{
-    font-size:13px;font-weight:600;
-    letter-spacing:0.04em;
-    opacity:0.75;
   }
   .slider{
     position:relative;
@@ -563,8 +557,8 @@
   }
   .footer-center .mascot:hover{transform:scale(1.06) rotate(-2deg);}
   @keyframes mascotSway{
-    0%,100%{transform:rotate(0deg);}
-    50%{transform:rotate(1.5deg);}
+    0%,100%{transform:rotate(-2.5deg) translateY(0);}
+    50%{transform:rotate(3deg) translateY(-5px);}
   }
   @media (prefers-reduced-motion: reduce){
     .footer-center .mascot{animation:none;}
@@ -575,9 +569,21 @@
     letter-spacing:0.02em;
   }
   .legal-section{
-    max-width:700px;margin:0 auto;padding:60px 5%;color:var(--blue);
+    max-width:700px;margin:0 auto;padding:90px 5%;color:var(--blue);
   }
-  .legal-section h2{font-weight:800;}
+  .legal-section h2{
+    font-weight:800;font-style:italic;
+    text-transform:uppercase;
+    font-size:clamp(28px,4.4vw,52px);
+    transform:skewX(-6deg);
+    margin:0 0 34px;
+  }
+  .legal-section p{
+    font-size:clamp(16px,2vw,20px);
+    line-height:1.7;
+    font-weight:500;
+    margin:0 0 20px;
+  }
 
   /* ---------- Fade-in on scroll ---------- */
   .fade-in{opacity:0;transform:translateY(24px) scale(0.97);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);}

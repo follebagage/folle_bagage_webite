@@ -7,8 +7,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
 
-msgid "Folle - Wir machen aus Ideen Kleidung."
-msgstr "Folle - We turn ideas into clothing."
+msgid "Folle - Wir machen aus Ideen Kleidung"
+msgstr "Folle - We turn ideas into clothing"
 
 msgid "Folle ist eine Textilmanufaktur. Wir begleiten den gesamten Weg von der ersten Idee bis zum fertigen Kleidungsstück."
 msgstr "Folle is a textile manufacturer. We accompany the entire journey from the first idea to the finished garment."
@@ -37,8 +37,8 @@ msgstr "Legal Notice"
 msgid "Stickmaschine bei der Arbeit"
 msgstr "Embroidery machine at work"
 
-msgid "&bdquo;Wir machen aus Ideen Kleidung.&ldquo;"
-msgstr "&ldquo;We turn ideas into clothing.&rdquo;"
+msgid "Wir machen aus Ideen Kleidung"
+msgstr "We turn ideas into clothing"
 
 msgid "Vorheriges Projekt"
 msgstr "Previous project"
@@ -123,3 +123,9 @@ msgstr "Invalid input."
 
 msgid "Nachricht konnte nicht gesendet werden. Bitte versuche es später erneut."
 msgstr "Message could not be sent. Please try again later."
+
+msgid "Datenschutzerklärung von Folle Bagage."
+msgstr "Privacy policy of Folle Bagage."
+
+msgid "Impressum von Folle Bagage."
+msgstr "Legal notice of Folle Bagage."

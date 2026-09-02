@@ -9,4 +9,6 @@ urlpatterns = [
     path('products/<slug:slug>/', views.product_detail, name='product_detail'),
     path('contact/', views.contact, name='contact'),
     path('historie/', views.historie, name='historie'),
+    path('datenschutz/', views.privacy, name='privacy'),
+    path('impressum/', views.impressum, name='impressum'),
 ]
