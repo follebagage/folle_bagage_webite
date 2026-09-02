@@ -37,8 +37,8 @@ msgstr "Legal Notice"
 msgid "Stickmaschine bei der Arbeit"
 msgstr "Embroidery machine at work"
 
-msgid "&bdquo;Wir machen<br>aus Ideen Kleidung.&ldquo;"
-msgstr "&ldquo;We turn<br>ideas into clothing.&rdquo;"
+msgid "&bdquo;Wir machen aus Ideen Kleidung.&ldquo;"
+msgstr "&ldquo;We turn ideas into clothing.&rdquo;"
 
 msgid "Vorheriges Projekt"
 msgstr "Previous project"
