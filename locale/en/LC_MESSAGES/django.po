@@ -129,3 +129,21 @@ msgstr "Privacy policy of Folle Bagage."
 
 msgid "Impressum von Folle Bagage."
 msgstr "Legal notice of Folle Bagage."
+
+msgid "Kontaktiere Folle Clothing. Hier findest du unsere Kontaktdaten und ein Kontaktformular."
+msgstr "Contact Folle Clothing. Find our contact details and a contact form here."
+
+msgid "Was 2019 in einem gerade einmal 5 Quadratmeter großen Lagerraum begann, ist heute unsere Berufung. Damals standen wir am Siebdruckkarussell und haben die ersten Kleidungsstücke bedruckt. So begann die Reise. Wir sind häufig an unsere Grenzen gestoßen und haben unfassbar viel gelernt."
+msgstr "What began in 2019 in a storage room of just 5 square metres is our calling today. Back then we stood at the screen-printing carousel, printing our first garments. That's how the journey began. We often pushed ourselves to our limits and learned an incredible amount along the way."
+
+msgid "Mit der Zeit wurde aus den ersten eigenen Projekten eine professionelle Textilveredelung und ein Partner für unterschiedlichste Unternehmen, Personen und Institutionen. Wir haben Erfahrungen gesammelt, ein starkes Netzwerk aufgebaut und gelernt, was es braucht, um aus einer Idee ein Produkt zu machen."
+msgstr "Over time, our first personal projects grew into a professional textile finishing business and a partner for a wide range of companies, individuals and institutions. We gathered experience, built a strong network and learned what it takes to turn an idea into a product."
+
+msgid "Dabei verstehen wir uns nicht nur als Produzent, sondern als operativer Partner entlang des gesamten Prozesses – von der ersten Idee über Design und Entwicklung bis hin zu Produktion, Veredelung und dem fertigen Produkt."
+msgstr "We see ourselves not just as a manufacturer, but as an operational partner throughout the entire process - from the first idea through design and development to production, finishing and the final product."
+
+msgid "Denn unsere Haltung ist klar: Kleidung ist mehr als nur ein Textil. Sie transportiert Botschaften, vermittelt Werte und schafft Identität. Sie kann zeigen, wofür Menschen, Unternehmen oder Gemeinschaften stehen."
+msgstr "Because our stance is clear: clothing is more than just a textile. It carries messages, conveys values and creates identity. It can show what people, companies or communities stand for."
+
+msgid "Genau deshalb wollen wir mit jedem Projekt nicht einfach nur Kleidung produzieren, sondern Produkte schaffen, die eine Geschichte erzählen, eine Botschaft tragen und Identität sichtbar machen."
+msgstr "That's exactly why, with every project, we don't just want to produce clothing - we want to create products that tell a story, carry a message and make identity visible."
