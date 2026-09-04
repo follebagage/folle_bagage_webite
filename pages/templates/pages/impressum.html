@@ -7,6 +7,39 @@
 {% block content %}
 <section class="legal-section fade-in">
   <h2 class="text-slide-down">{% trans "Impressum" %}</h2>
-  <p class="text-slide-down">{% trans "Inhalte folgen in Kürze." %}</p>
+
+  <h3>{% trans "Angaben gemäß § 5 DDG" %}</h3>
+  <p>
+    Folle Bagage UG (haftungsbeschränkt)<br>
+    Hermannstra&szlig;e 2<br>
+    38114 Braunschweig<br>
+    {% trans "Deutschland" %}
+  </p>
+
+  <h3>{% trans "Vertreten durch die Geschäftsführer" %}</h3>
+  <p>
+    Johannes Steinmetz<br>
+    Franziskus Steinmetz<br>
+    Mika D&ouml;hring
+  </p>
+
+  <h3>{% trans "Kontakt" %}</h3>
+  <p>
+    {% trans "Telefon:" %} &ndash;<br>
+    {% trans "E-Mail:" %} <a href="mailto:info@folle-bagage.com">info@folle-bagage.com</a>
+  </p>
+
+  <h3>{% trans "Registereintrag" %}</h3>
+  <p>
+    {% trans "Eingetragen im Handelsregister." %}<br>
+    {% trans "Registergericht:" %} Amtsgericht Braunschweig<br>
+    {% trans "Registernummer:" %} HRB 209170
+  </p>
+
+  <h3>{% trans "Umsatzsteuer-ID" %}</h3>
+  <p>DE341651011</p>
+
+  <h3>{% trans "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV" %}</h3>
+  <p>{% blocktrans %}Johannes Steinmetz, Franziskus Steinmetz und Mika D&ouml;hring{% endblocktrans %}</p>
 </section>
 {% endblock %}

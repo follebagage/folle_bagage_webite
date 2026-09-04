@@ -5,8 +5,99 @@
 {% block description %}{% trans "Datenschutzerklärung von Folle Bagage." %}{% endblock %}
 
 {% block content %}
-<section class="legal-section fade-in">
+<section class="legal-section">
   <h2 class="text-slide-down">{% trans "Datenschutz" %}</h2>
-  <p class="text-slide-down">{% trans "Inhalte folgen in Kürze." %}</p>
+  <p class="legal-updated">{% trans "Stand: September 2026" %}</p>
+
+  <h3>{% trans "1. Verantwortlicher" %}</h3>
+  <p>{% blocktrans %}Verantwortlicher für die Verarbeitung personenbezogener Daten auf dieser Website ist:{% endblocktrans %}</p>
+  <p>
+    <strong>Folle Bagage UG (haftungsbeschränkt)</strong><br>
+    Hermannstra&szlig;e 2<br>
+    38114 Braunschweig<br>
+    {% trans "Deutschland" %}
+  </p>
+  <p>
+    {% trans "Vertreten durch die Geschäftsführer" %}:<br>
+    Johannes Steinmetz<br>
+    Franziskus Steinmetz<br>
+    Mika D&ouml;hring
+  </p>
+  <p>{% trans "E-Mail:" %} <a href="mailto:info@folle-bagage.com">info@folle-bagage.com</a></p>
+
+  <h3>{% trans "2. Allgemeine Informationen zur Datenverarbeitung" %}</h3>
+  <p>{% blocktrans %}Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Wir verarbeiten personenbezogene Daten ausschließlich im Rahmen der geltenden datenschutzrechtlichen Vorschriften, insbesondere der Datenschutz-Grundverordnung (DSGVO) und des Bundesdatenschutzgesetzes (BDSG).{% endblocktrans %}</p>
+  <p>{% blocktrans %}Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Wir verarbeiten personenbezogene Daten nur, soweit dies für die Bereitstellung einer funktionsfähigen Website, die Bearbeitung von Anfragen oder die Erfüllung anderer von Ihnen gewünschter Leistungen erforderlich ist.{% endblocktrans %}</p>
+
+  <h3>{% trans "3. Aufruf der Website" %}</h3>
+  <p>{% blocktrans %}Beim Aufruf unserer Website können durch den technischen Betrieb der Website bestimmte Informationen automatisch verarbeitet werden. Dazu können insbesondere gehören:{% endblocktrans %}</p>
+  <ul>
+    <li>{% trans "IP-Adresse des zugreifenden Endgeräts" %}</li>
+    <li>{% trans "Datum und Uhrzeit des Zugriffs" %}</li>
+    <li>{% trans "aufgerufene Seiten und Inhalte" %}</li>
+    <li>{% trans "verwendeter Browser" %}</li>
+    <li>{% trans "Betriebssystem" %}</li>
+    <li>{% trans "Referrer-URL" %}</li>
+    <li>{% trans "technische Informationen über das Endgerät" %}</li>
+  </ul>
+  <p>{% blocktrans %}Diese Daten können erforderlich sein, um die Website technisch bereitzustellen, die Stabilität und Sicherheit der Website zu gewährleisten und Fehler zu erkennen.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der sicheren und technisch zuverlässigen Bereitstellung unserer Website.{% endblocktrans %}</p>
+
+  <h3>{% trans "4. Hosting" %}</h3>
+  <p>{% blocktrans %}Unsere Website wird bei einem externen Dienstleister gehostet.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Der Anbieter unseres Hosting-/Domain-Dienstes ist:{% endblocktrans %}</p>
+  <p>
+    <strong>United-Domains AG</strong><br>
+    Gautinger Stra&szlig;e 10<br>
+    82319 Starnberg<br>
+    {% trans "Deutschland" %}
+  </p>
+  <p>{% blocktrans %}Im Rahmen des Hostings können personenbezogene Daten verarbeitet werden, insbesondere technische Zugriffsdaten und Server-Logdaten.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Die Verarbeitung erfolgt zur technischen Bereitstellung und zum sicheren Betrieb unserer Website. Soweit gesetzlich erforderlich, erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.{% endblocktrans %}</p>
+
+  <h3>{% trans "5. Kontaktformular" %}</h3>
+  <p>{% blocktrans %}Wenn Sie unser Kontaktformular nutzen, verarbeiten wir die von Ihnen eingegebenen Daten, insbesondere Ihre Kontaktdaten und den Inhalt Ihrer Nachricht.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Welche Daten konkret erhoben werden, ergibt sich aus den jeweiligen Eingabefeldern des Kontaktformulars.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Die Verarbeitung erfolgt zum Zweck der Bearbeitung und Beantwortung Ihrer Anfrage.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Anbahnung oder Durchführung eines Vertrags zusammenhängt. In anderen Fällen erfolgt die Verarbeitung auf Grundlage unseres berechtigten Interesses an der Beantwortung von Anfragen gemäß Art. 6 Abs. 1 lit. f DSGVO.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Die von Ihnen übermittelten Daten werden gelöscht, sobald der Zweck der Verarbeitung entfällt und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.{% endblocktrans %}</p>
+
+  <h3>{% trans "6. Cookies" %}</h3>
+  <p>{% blocktrans %}Unsere Website verwendet Cookies und vergleichbare Technologien.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden können. Sie können dazu dienen, die technische Funktionalität der Website sicherzustellen, Ihre Einstellungen zu speichern oder bestimmte Funktionen bereitzustellen.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Wir unterscheiden zwischen technisch erforderlichen Cookies und – sofern eingesetzt – Cookies, die einer Einwilligung bedürfen.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Technisch erforderliche Cookies werden eingesetzt, soweit sie für den Betrieb der Website erforderlich sind.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Für Cookies, die nicht technisch erforderlich sind, holen wir – soweit gesetzlich erforderlich – vor ihrer Speicherung Ihre Einwilligung ein.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Sie können Ihre Cookie-Einstellungen über das auf unserer Website bereitgestellte Cookie-Banner verwalten und Ihre Einwilligung jederzeit mit Wirkung für die Zukunft ändern oder widerrufen.{% endblocktrans %}</p>
+
+  <h3>{% trans "7. Social Media" %}</h3>
+  <p>{% blocktrans %}Auf unserer Website können Links zu unseren Social-Media-Auftritten, insbesondere zu Instagram, enthalten sein.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Sofern es sich lediglich um einen Link zu unserem Social-Media-Profil handelt, werden durch das bloße Aufrufen unserer Website grundsätzlich keine Daten an den jeweiligen Social-Media-Anbieter übermittelt. Erst wenn Sie den entsprechenden Link anklicken, verlassen Sie unsere Website und werden zur jeweiligen Plattform weitergeleitet.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Für die Datenverarbeitung auf den jeweiligen Social-Media-Plattformen gelten die Datenschutzbestimmungen des jeweiligen Anbieters.{% endblocktrans %}</p>
+
+  <h3>{% trans "8. Ihre Rechte" %}</h3>
+  <p>{% blocktrans %}Sie haben im Rahmen der gesetzlichen Voraussetzungen insbesondere folgende Rechte:{% endblocktrans %}</p>
+  <ul>
+    <li>{% blocktrans %}Recht auf Auskunft über Ihre personenbezogenen Daten gemäß Art. 15 DSGVO{% endblocktrans %}</li>
+    <li>{% blocktrans %}Recht auf Berichtigung unrichtiger Daten gemäß Art. 16 DSGVO{% endblocktrans %}</li>
+    <li>{% blocktrans %}Recht auf Löschung gemäß Art. 17 DSGVO{% endblocktrans %}</li>
+    <li>{% blocktrans %}Recht auf Einschränkung der Verarbeitung gemäß Art. 18 DSGVO{% endblocktrans %}</li>
+    <li>{% blocktrans %}Recht auf Datenübertragbarkeit gemäß Art. 20 DSGVO{% endblocktrans %}</li>
+    <li>{% blocktrans %}Recht auf Widerspruch gegen bestimmte Verarbeitungen gemäß Art. 21 DSGVO{% endblocktrans %}</li>
+    <li>{% blocktrans %}Recht auf Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft{% endblocktrans %}</li>
+  </ul>
+  <p>{% blocktrans %}Wenn die Verarbeitung auf Ihrer Einwilligung beruht, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt davon unberührt.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Sie haben außerdem das Recht, sich bei einer Datenschutzaufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren.{% endblocktrans %}</p>
+
+  <h3>{% trans "9. Dauer der Speicherung" %}</h3>
+  <p>{% blocktrans %}Wir speichern personenbezogene Daten nur so lange, wie dies für die jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Nach Wegfall des jeweiligen Verarbeitungszwecks werden die Daten gelöscht, sofern keine gesetzlichen Gründe für eine längere Speicherung bestehen.{% endblocktrans %}</p>
+
+  <h3>{% trans "10. Änderungen dieser Datenschutzerklärung" %}</h3>
+  <p>{% blocktrans %}Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich die rechtlichen, technischen oder organisatorischen Rahmenbedingungen ändern oder neue Funktionen und Dienste auf unserer Website eingesetzt werden.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Es gilt jeweils die zum Zeitpunkt Ihres Besuchs auf unserer Website veröffentlichte Datenschutzerklärung.{% endblocktrans %}</p>
+
+  <p class="legal-updated">{% trans "Stand: September 2026" %}</p>
 </section>
 {% endblock %}
