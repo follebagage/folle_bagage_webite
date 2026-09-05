@@ -602,13 +602,13 @@
   }
   .footer-grid a{display:block;font-weight:600;font-size:18px;margin:10px 0;}
   .powered-by{
-    max-width:1100px;margin:36px auto 0;
+    max-width:1100px;margin:24px auto 0;
     text-align:center;
-    font-size:13px;
+    font-size:10px;
     font-weight:600;
     letter-spacing:0.02em;
     opacity:0.7;
-    padding-top:20px;
+    padding-top:12px;
     border-top:1px solid rgba(255,255,255,0.2);
   }
   .footer-grid a:hover{opacity:0.8;}
@@ -1010,23 +1010,20 @@
 
     if(slides.length > 1){
       var autoplayTimer = null;
-      var autoplayStopped = false;
       var tickAutoplay = function(){
         var atEnd = Math.ceil(track.scrollLeft + track.clientWidth) >= track.scrollWidth;
         if(atEnd){ track.scrollTo({left:0, behavior:'smooth'}); }
         else { scrollByCard(1); }
       };
       var startAutoplay = function(){
-        if(autoplayStopped || autoplayTimer) return;
+        if(autoplayTimer) return;
         autoplayTimer = setInterval(tickAutoplay, 5000);
       };
       var stopAutoplay = function(){
         if(autoplayTimer){ clearInterval(autoplayTimer); autoplayTimer = null; }
       };
-      // Manual interaction (swipe, click-drag, wheel) stops autoplay for good.
-      ['pointerdown','touchstart','wheel'].forEach(function(evt){
-        track.addEventListener(evt, function(){ autoplayStopped = true; stopAutoplay(); }, {passive:true, once:true});
-      });
+      // Loops continuously for as long as the carousel is on screen; manual
+      // swipes/clicks just move it, they don't stop the loop.
       // Only advance while the carousel is actually on screen (mobile included),
       // so it never fights the page's own vertical scroll off-screen or scroll-jacks mid-swipe.
       if('IntersectionObserver' in window){
