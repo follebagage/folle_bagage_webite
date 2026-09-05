@@ -94,8 +94,8 @@ msgstr "Back to projects"
 msgid "So entsteht es"
 msgstr "How it's made"
 
-msgid "Powered by"
-msgstr "Powered by"
+msgid "Powered By"
+msgstr "Powered By"
 
 msgid "Kontaktiere Folle Bagage. Hier findest du unsere Adresse, Kontaktdaten und ein Kontaktformular."
 msgstr "Contact Folle Bagage. Find our address, contact details and a contact form here."
