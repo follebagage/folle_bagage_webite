@@ -403,7 +403,7 @@
   }
   .slider .arrow.prev{left:2%;}
   .slider .arrow.next{right:2%;}
-  @media (max-width:640px){
+   (max-width:640px){
     .slider .arrow{display:none;}
   }
 
@@ -520,7 +520,7 @@
   }
   @media (max-width:640px){
     .cookie-banner{padding:20px 5%;}
-    .cookie-banner-inner{align-items:stretch;justify-content:flex-start;text-align:center;gap:16px;}
+    .cookie-banner-inner{flex-direction:column;align-items:stretch;justify-content:flex-start;text-align:center;gap:16px;}
     .cookie-banner-text{flex:0 1 auto;}
     .cookie-banner-actions{justify-content:center;}
   }
@@ -601,13 +601,6 @@
     text-align:center;
   }
   .footer-grid a{display:block;font-weight:600;font-size:18px;margin:10px 0;}
-  .footer-grid .footer-link-button{
-    display:block;width:100%;
-    font-weight:600;font-size:18px;margin:10px 0;
-    background:none;border:none;padding:0;
-    color:inherit;font-family:inherit;
-    cursor:pointer;
-  }
   .powered-by{
     max-width:1100px;margin:36px auto 0;
     text-align:center;
@@ -618,8 +611,7 @@
     padding-top:20px;
     border-top:1px solid rgba(255,255,255,0.2);
   }
-  .footer-grid a:hover,
-  .footer-grid .footer-link-button:hover{opacity:0.8;}
+  .footer-grid a:hover{opacity:0.8;}
   .footer-center .mascot{
     width:150px;max-width:100%;height:auto;margin:0 auto;display:block;overflow:visible;
     animation:mascotSway 4.5s ease-in-out infinite;
@@ -844,12 +836,6 @@
     var cookieReject = document.getElementById('cookie-reject');
     if(cookieAccept){ cookieAccept.addEventListener('click', function(){ setConsent('accepted'); }); }
     if(cookieReject){ cookieReject.addEventListener('click', function(){ setConsent('rejected'); }); }
-
-    // Footer "Cookie-Einstellungen" link re-opens the banner so a choice can be changed later.
-    var cookieSettingsLink = document.getElementById('cookie-settings-link');
-    if(cookieSettingsLink){
-      cookieSettingsLink.addEventListener('click', function(){ showCookieBanner(); });
-    }
   }
 
   var form = document.getElementById('contact-form');
